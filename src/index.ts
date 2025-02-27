@@ -80,7 +80,7 @@ for (const rule of eslintRules) {
     'eslint/lib/rules',
     rule,
   );
-  const importedRule = require(rulePath);
+  const {default: importedRule} = await import(rulePath);
   const ruleName = rule.replace('.js', '');
   disabledRules[ruleName] = disableFix(_.cloneDeep(importedRule));
 }
@@ -104,7 +104,7 @@ for (const plugin of eslintPlugins) {
       .filter((read) => read.startsWith('eslint-plugin'));
     for (const pluginDirectory of pluginDirectories) {
       const scopedPlugin = path.posix.join(plugin, pluginDirectory);
-      const importedPlugin = require(scopedPlugin) as EslintPlugin;
+      const {default: importedPlugin} = await import(scopedPlugin) as {default: EslintPlugin};
       importedPlugin.id = scopedPlugin.replace(
         path.join(dirname, nodeModules),
         '',
@@ -112,7 +112,7 @@ for (const plugin of eslintPlugins) {
       importedPlugins.push(importedPlugin);
     }
   } else {
-    const imported = require(plugin) as EslintPlugin;
+    const {default: imported} = await import(plugin) as {default: EslintPlugin};
     imported.id = plugin;
     importedPlugins.push(imported);
   }

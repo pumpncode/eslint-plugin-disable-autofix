@@ -1,38 +1,38 @@
 {
-  "compilerOptions": {
-    "lib": [
-      "es6"
-    ],
-    "moduleResolution": "Node",
-    "module": "CommonJS",
-    "target": "es6",
-    "sourceMap": false,
-    "allowJs": true,
-    "strict": true,
-    "esModuleInterop": true,
-    "allowSyntheticDefaultImports": true,
-    "skipLibCheck": false,
-    "forceConsistentCasingInFileNames": true,
-    "declaration": true,
-    "noEmit": false,
-    "noImplicitAny": true,
-    "removeComments": true,
-    "preserveConstEnums": true,
-    "outDir": "./dist",
-    "paths": {
-      "./*.ts": [
-        "./*"
-      ]
-    }
-  },
-  "files": [
-    "./src/index.ts"
-  ],
-  "include": [
-    "./index.d.ts"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+	"compilerOptions": {
+		"lib": [
+			"es6"
+		],
+		"moduleResolution": "Node",
+		"module": "esnext",
+		"target": "esnext",
+		"sourceMap": false,
+		"allowJs": true,
+		"strict": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"skipLibCheck": false,
+		"forceConsistentCasingInFileNames": true,
+		"declaration": true,
+		"noEmit": false,
+		"noImplicitAny": true,
+		"removeComments": true,
+		"preserveConstEnums": true,
+		"outDir": "./dist",
+		"paths": {
+			"./*.ts": [
+				"./*"
+			]
+		}
+	},
+	"files": [
+		"./src/index.ts"
+	],
+	"include": [
+		"./index.d.ts"
+	],
+	"exclude": [
+		"node_modules",
+		"dist"
+	]
 }
